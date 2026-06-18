@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #02040a;
+  --foreground: #ecfeff;
+  --card: #060b13;
+  --card-foreground: #ecfeff;
+  --primary: #06b6d4;
+  --primary-foreground: #ffffff;
+  --border: rgba(6, 182, 212, 0.15);
+  --accent: #22d3ee;
+  --accent-foreground: #020617;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-share-tech), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+h1, h2, h3, h4, h5, h6, .font-title {
+  font-family: var(--font-orbitron), sans-serif;
+  letter-spacing: 0.05em;
+}
+
+/* Futuristic Digital HUD styling upgrade */
+.glass-panel {
+  background: rgba(4, 8, 16, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(6, 182, 212, 0.2);
+  box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.65), 0 0 20px rgba(6, 182, 212, 0.06);
+  position: relative;
+}
+
+/* Digital neon brackets for panels */
+.glass-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  border-top: 1.5px solid #22d3ee;
+  border-left: 1.5px solid #22d3ee;
+  pointer-events: none;
+}
+
+.glass-panel::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 6px;
+  height: 6px;
+  border-bottom: 1.5px solid #22d3ee;
+  border-right: 1.5px solid #22d3ee;
+  pointer-events: none;
+}
+
+.glass-input {
+  background: rgba(6, 182, 212, 0.03);
+  border: 1px solid rgba(6, 182, 212, 0.18);
+  color: #ffffff;
+  font-family: var(--font-share-tech), ui-monospace, monospace;
+  transition: all 0.2s ease;
+}
+
+.glass-input:focus {
+  background: rgba(6, 182, 212, 0.06);
+  border-color: rgba(34, 211, 238, 0.6);
+  outline: none;
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.25);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(6, 182, 212, 0.2);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(6, 182, 212, 0.4);
+}
+
+/* Subtle glow animation */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.6;
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.4);
+  }
+  50% {
+    opacity: 0.9;
+    box-shadow: 0 0 25px rgba(6, 182, 212, 0.7);
+  }
+}
+
+.pulse-glow-indicator {
+  animation: pulse-glow 2s infinite ease-in-out;
+}
